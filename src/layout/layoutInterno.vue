@@ -13,21 +13,21 @@
 
       <v-btn
         v-if="$vuetify.breakpoint.name === 'xl' || $vuetify.breakpoint.name === 'lg' || $vuetify.breakpoint.name === 'md'"
-        href="#quemSomos"
+        href="#download"
         text
       >
         <span class="mr-2">download</span>
       </v-btn>
       <v-btn
         v-if="$vuetify.breakpoint.name === 'xl' || $vuetify.breakpoint.name === 'lg' || $vuetify.breakpoint.name === 'md'"
-        href="#banner"
+        href="#documentacao"
         text
       >
         <span class="mr-2">Documentação</span>
       </v-btn>
       <v-btn
         v-if="$vuetify.breakpoint.name === 'xl' || $vuetify.breakpoint.name === 'lg' || $vuetify.breakpoint.name === 'md'"
-        href="#perfis"
+        href="#sobre"
         text
       >
         <span class="mr-2">Sobre</span>
