@@ -1119,8 +1119,6 @@ escrever(resultado)  # Output: Verdadeiro
 </template>
 
 <script>
-import axios from '@/plugins/axios_local'
-
 export default {
   name: 'TelaSite',
   data: () => ({
@@ -1154,19 +1152,29 @@ export default {
     },
     async baixarArquivo () {
       this.loading = true
-      const url = '/download'
-      await axios.get(url, { responseType: 'blob' })
-        .then(response => {
-          const url = window.URL.createObjectURL(new Blob([response.data]))
-          const link = document.createElement('a')
-          link.href = url
-          link.setAttribute('download', 'PortuPy.exe')
-          document.body.appendChild(link)
-          link.click()
-        })
-        .catch(error => {
-          window.console.error('Erro ao baixar o arquivo', error)
-        })
+      // const url = '/download'
+      // await axios.get(url, { responseType: 'blob' })
+      //   .then(response => {
+      //     const url = window.URL.createObjectURL(new Blob([response.data]))
+      //     const link = document.createElement('a')
+      //     link.href = url
+      //     link.setAttribute('download', 'PortuPy.exe')
+      //     document.body.appendChild(link)
+      //     link.click()
+      //   })
+      //   .catch(error => {
+      //     window.console.error('Erro ao baixar o arquivo', error)
+      //   })
+      // URL do arquivo .exe
+      const url = 'assets/download/PortuPy.exe'
+
+      // Cria um elemento <a> invisível para iniciar o download
+      const link = document.createElement('a')
+      link.href = url
+      link.download = 'PortuPy.exe'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
 
       this.loading = false
     }
